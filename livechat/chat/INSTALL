@@ -1,0 +1,76 @@
+$Id$
+
+System requirements
+===================
+The requirements to run Chatty are very simple:
+* a web server which supports PHP as a module (for instance, the most
+famous one, Apache - www.apache.org)
+* PHP
+* MySQL
+As far as server load is concerned, it is rather difficult making a
+prediction, it depends greatly on `how many users you've got' and
+`how many hits you have on your site'. But please remember that
+currently the page which shows the `dialogue' is set to be refreshed
+every 10 seconds, and thus you will probably need a quite powerful
+machine to run it properly.
+
+Installation
+============
+Installing the software should be very easily, even though there is
+no automatic procedure to do that. Just gunzip & un-tar the file you've
+got, modify the config.inc.php and connect.inc.php files to suit your
+configuration and needs, run the chat.sql MySQL-script and that should
+be enough!
+
+These are the steps more detailed:
+
+In order to create the DB you need a MySQL db running. Connect to it in
+some way: you might be using phpAdmin, a graphical frontend, or the mysql
+command-line console, or other tools.
+To connect, you need a user and a password which must have the capability
+of creating databases and tables.
+If you have them, connect and you just have to copy and paste the contents
+of the chat.sql file where your utility allows you to do so.
+At this time, you have finished creating your DB, which is named "chatty".
+This is the place where everything will be stored (info regarding users, the
+chat messages, and so on)
+
+Now, open the connect.inc.php file you unzipped in some folder on the filesystem.
+There are 3 lines at the very beginning:
+
+define("HOSTNAME", "localhost");
+define("USERNAME", "");
+define("PASSWORD", "");
+
+Change them in order to fit your needs. The first (HOSTNAME) should probabily
+remain the same.
+The second (where USERNAME is defined) should be changed to reflect to the
+username you used in point 2. For instance, it might look like:
+define("USERNAME", "root");
+if "root" was the user you provided to MySQL when you created the Chatty DB.
+The same happens with password. Just write the password of the given user.
+Be sure to write your username and password in the correct case, and ***inside***
+the provided quotes (that is, in our example, "root" and not root if root is the
+user)
+
+Then on with config.inc.php
+Even if you do not change it, the chat should work. However, you probably want
+to customize this, too.
+Change the lines:
+/* logo URL */
+$logo_url = "http://URL_TO_YOUR_LOGO/";
+
+/* host specification */
+$your_host = "yourhost.com";
+$mail_address = "webmaster@yourhost.com";
+
+by setting the URL of your logo (this will go in a small area in the bottom-left
+corner of the screen), your hostname with the full path to the folder of Chatty
+(e.g. www.olivo.net/chatty - without the trailing slash) and your email address.
+
+Then, finally, connect to http://YOUR_SITE/chatty/
+You should receive a screen asking for login or registration.
+
+NOTE: register_globals *MUST* be on!
+
+For any question you can mail me at me@olivo.net

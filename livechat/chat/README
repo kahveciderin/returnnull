@@ -1,0 +1,26 @@
+This is the version of "Chatty :)", release 1.0.4
+$Id$
+
+The chatty philosophy
+=====================
+Chatty was designed to be a fast, easy to use web application which
+lets you chat with other guys on a site. It is written in PHP (www.php.net) and
+it uses as a backend DMBS the fast and robust MySQL (www.mysql.org)
+
+Where to find Chatty
+====================
+There is a Chatty `web page' at http://www.olivo.net/software/chatty/
+that contains an overview of Chatty its source code repository.
+
+Copyright
+=========
+Chatty is distributed under the `GNU general public license.'
+Please refer to the `COPYING' file included with the release
+for a copy of the license proper.
+
+Bug reports
+===========
+Currently this section is under development and no bug was found.
+But we all know that even the best software as bugs in it, so if
+you find any would you be so kind to tell me about that? You
+can find me at me@olivo.net

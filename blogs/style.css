@@ -1,0 +1,15 @@
+.blog-desc{
+overflow: hidden;
+}
+
+
+.cr, .cr:link, .cr:visited {
+background: #8f8f8f;
+border-radius: 5%;
+color: #fff;
+text-decoration: none;
+}
+
+.cr:hover{
+background: #4f4f4f;
+}

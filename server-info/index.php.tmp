@@ -1,0 +1,77 @@
+<?php
+ $f = fopen("/sys/class/thermal/thermal_zone0/temp","r");
+ $temp = fgets($f);
+ echo 'CPU temperature is '.round($temp/1000).'°C';
+ echo '<br>'.'Uptime: '.shell_exec('uptime -p');
+$exec_loads = sys_getloadavg();
+$exec_cores = trim(shell_exec("grep -P '^processor' /proc/cpuinfo|wc -l"));
+$cpu = round($exec_loads[1]/($exec_cores + 1)*100, 0) . '%';
+
+echo '<br> CPU Usage: '.get_server_cpu_usage();
+
+
+
+$exec_free = explode("\n", trim(shell_exec('free')));
+$get_mem = preg_split("/[\s]+/", $exec_free[1]);
+
+$memr = number_format(round($get_mem[2]/1024, 2), 2) . '/' . number_format(round($get_mem[1]/1024, 2), 2);
+
+
+
+
+
+$mem = $memr - round($get_mem[2]/$get_mem[1]*100, 0) . '%';
+
+
+echo '<br> RAM Usage (%): '.$mem."\t".$memr.' MB';
+
+
+
+
+
+
+echo '<br>';
+
+
+function get_server_cpu_usage(){
+
+    $load = sys_getloadavg();
+return 'Last 1 min -> '.$load[0].' / 5 min -> '.$load[1].' / 15 min -> '.$load[2];
+    //return $load[0]*100;
+
+}
+
+
+
+echo '<br> <br> <br>'.'<a href='.'"'.'netspeed.php'.'"'.'>Click here to see the network speed.</a>';
+
+
+
+
+
+
+
+
+
+
+
+
+echo '<br> The page refreshes itself in 5 seconds. <br> <br>';
+$refreshAfter = 5;
+ 
+//Send a Refresh header to the browser.
+header('Refresh: ' . $refreshAfter);
+
+
+
+
+
+
+
+
+
+
+
+ fclose($f);
+ 
+?>

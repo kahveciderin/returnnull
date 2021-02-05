@@ -1,0 +1,140 @@
+.school{
+  width: 100%;
+  -ms-flex: 1; /* IE 10 */
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+
+.responsive {
+  padding: 0px 3px;
+  float: left;
+  width: 22%;
+  height: 130px;
+  margin: auto;
+  
+}
+
+.classname{
+
+color:#B51603;
+font-weight: bold;
+font-weight: bolder;
+decoration: none;
+}
+
+
+.classname_o{
+
+color:#AA00A8;
+font-weight: bold;
+font-weight: bolder;
+decoration: none;
+}
+.rin{
+border-radius: 8px;
+width: 95%;
+height: 95%;
+background-color: lightgreen;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 44.999999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+
+
+.btn-school{
+
+
+
+}
+.main-school{
+height: 300px;
+margin: auto;
+width: 85%;
+border-radius: 10px;
+background-color: #4CAF50;
+}
+
+@media screen and (max-width: 600px) {
+.school{
+  flex-direction: column;
+}
+
+.btn-school{
+
+margin: auto;
+
+}
+}
+#myDIV {
+  width: 100%;
+  padding: 15px 0;
+  background-color: lightblue;
+  margin-top: 20px;
+}
+.unmtable{
+  width: 100%;
+  -ms-flex: 1; /* IE 10 */
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal-s {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  
+  transition: display 2s;
+}
+
+/* Modal Content */
+.modal-content-s {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close-s {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-s:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
